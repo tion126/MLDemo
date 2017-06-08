@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SenceDetectDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PrP-sI-67K">
+                                <rect key="frame" x="46" y="50" width="283" height="283"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PrP-sI-67K" secondAttribute="height" multiplier="1:1" id="bnf-6T-oiq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCw-8C-GvC">
+                                <rect key="frame" x="138" y="353" width="99" height="30"/>
+                                <state key="normal" title="Choose Image"/>
+                                <connections>
+                                    <action selector="chooseImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="XkE-nd-rH6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxr-D7-pEJ">
+                                <rect key="frame" x="164.5" y="408" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="confidence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CY-FZ-Fbs">
+                                <rect key="frame" x="144.5" y="449" width="85.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hCw-8C-GvC" firstAttribute="top" secondItem="PrP-sI-67K" secondAttribute="bottom" constant="20" id="2I7-EC-GHx"/>
+                            <constraint firstItem="PrP-sI-67K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="2gx-5o-Llz"/>
+                            <constraint firstItem="hCw-8C-GvC" firstAttribute="centerX" secondItem="PrP-sI-67K" secondAttribute="centerX" id="9JN-Bj-IfE"/>
+                            <constraint firstItem="PrP-sI-67K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ahc-6p-fdX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PrP-sI-67K" secondAttribute="trailing" constant="30" id="Pi8-6m-eHi"/>
+                            <constraint firstItem="9CY-FZ-Fbs" firstAttribute="centerX" secondItem="Oxr-D7-pEJ" secondAttribute="centerX" id="drj-FL-BVt"/>
+                            <constraint firstItem="9CY-FZ-Fbs" firstAttribute="top" secondItem="Oxr-D7-pEJ" secondAttribute="bottom" constant="20" id="gwD-t6-7i0"/>
+                            <constraint firstItem="Oxr-D7-pEJ" firstAttribute="centerX" secondItem="hCw-8C-GvC" secondAttribute="centerX" id="kAX-U4-gF3"/>
+                            <constraint firstItem="Oxr-D7-pEJ" firstAttribute="top" secondItem="hCw-8C-GvC" secondAttribute="bottom" constant="25" id="tHG-ZA-gZu"/>
+                            <constraint firstItem="PrP-sI-67K" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="wZF-4X-yzh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confidence" destination="9CY-FZ-Fbs" id="E1m-U9-Vvb"/>
+                        <outlet property="imageView" destination="PrP-sI-67K" id="KwN-Qu-fUS"/>
+                        <outlet property="sence" destination="Oxr-D7-pEJ" id="Uo6-nG-u8f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
